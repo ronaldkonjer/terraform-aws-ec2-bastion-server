@@ -76,6 +76,22 @@ variable "ssh_user" {
   description = "Default SSH user for this AMI. e.g. `ec2user` for Amazon Linux and `ubuntu` for Ubuntu systems"
 }
 
+variable "enable_proxyless" {
+  type = bool
+  description = "If true we upload the private_key to the bastion so we can ssh into the bastion and continue from there without proxy ssh request from localhost"
+}
+
+variable "bastion_private_key_filename" {
+  type        = string
+  description = "The location of the private key that is used to ssh into the bastion server"
+}
+
+variable "cluster_private_key_filename" {
+  type        = string
+  description = "The location of the private key that is used to ssh from the bastion server on to other servers normally via a proxied command, if empty use bastion_private_key_filename"
+  default = ""
+}
+
 variable "security_groups" {
   type        = list(string)
   description = "AWS security group IDs"
