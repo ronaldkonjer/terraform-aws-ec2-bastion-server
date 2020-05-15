@@ -1,5 +1,3 @@
-variable region {}
-
 variable "namespace" {
   description = "Namespace (e.g. `eg` or `cp`)"
   type        = string
