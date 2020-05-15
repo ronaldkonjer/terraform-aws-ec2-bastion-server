@@ -112,7 +112,7 @@ resource "null_resource" "bastion-node" {
     private_key = file(var.bastion_private_key_filename)
   }
   provisioner "file" {
-    source = var.cluster_private_key_filename > 0 ? var.cluster_private_key_filename : var.bastion_private_key_filename
+    source = var.cluster_private_key_filename != "" ? var.cluster_private_key_filename : var.bastion_private_key_filename
     destination = "~/.ssh/id_rsa"
   }
   provisioner "remote-exec" {
