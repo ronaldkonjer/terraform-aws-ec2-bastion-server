@@ -8,6 +8,11 @@ variable "stage" {
   type        = string
 }
 
+variable "environment" {
+  description = "Environment (e.g. `prod`, `test`)"
+  type        = string
+}
+
 variable "name" {
   description = "Name  (e.g. `app` or `bastion`)"
   type        = string
@@ -29,6 +34,12 @@ variable "tags" {
   type        = map(string)
   default     = {}
   description = "Additional tags (e.g. map('BusinessUnit`,`XYZ`)"
+}
+
+variable "label_order" {
+  type        = list(string)
+  default     = []
+  description = "The naming order of the id output and Name tag"
 }
 
 variable "zone_id" {
