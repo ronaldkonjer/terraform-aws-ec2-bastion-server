@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 variable "namespace" {
   description = "Namespace (e.g. `eg` or `cp`)"
   type        = string
@@ -45,8 +44,6 @@ variable "label_order" {
   description = "The naming order of the id output and Name tag"
 }
 
-=======
->>>>>>> cc4ebf97d3c2d2b30900466c84e15781fcec6233
 variable "zone_id" {
   type        = string
   default     = ""
@@ -61,11 +58,8 @@ variable "instance_type" {
 
 variable "ami" {
   type        = string
-<<<<<<< HEAD
-  default     = "ami-efd0428f"
-=======
+//  default     = "ami-efd0428f"
   default     = "ami-084ef34fdfdd7384c"
->>>>>>> cc4ebf97d3c2d2b30900466c84e15781fcec6233
   description = "AMI to use"
 }
 
@@ -96,7 +90,6 @@ variable "ssh_user" {
   description = "Default SSH user for this AMI. e.g. `ec2user` for Amazon Linux and `ubuntu` for Ubuntu systems"
 }
 
-<<<<<<< HEAD
 variable "enable_proxyless" {
   type = bool
   description = "If true we upload the private_key to the bastion so we can ssh into the bastion and continue from there without proxy ssh request from localhost"
@@ -110,23 +103,20 @@ variable "bastion_private_key_filename" {
 variable "cluster_private_key_filename" {
   type        = string
   description = "The location of the private key that is used to ssh from the bastion server on to other servers normally via a proxied command, if empty use bastion_private_key_filename"
-  default = ""
-=======
+  default     = ""
+}
+
 variable "ingress_security_groups" {
   type        = list(string)
   description = "AWS security group IDs allowed ingress to instance"
   default     = []
->>>>>>> cc4ebf97d3c2d2b30900466c84e15781fcec6233
 }
 
 variable "security_groups" {
   type        = list(string)
-<<<<<<< HEAD
-  description = "AWS security group IDs"
-=======
   description = "AWS security group IDs associated with instance"
   default     = []
->>>>>>> cc4ebf97d3c2d2b30900466c84e15781fcec6233
+
 }
 
 variable "allowed_cidr_blocks" {
@@ -138,12 +128,13 @@ variable "allowed_cidr_blocks" {
   ]
 }
 
-<<<<<<< HEAD
+
 variable "user_data_file" {
   type        = string
   default     = "user_data.sh"
   description = "User data file"
-=======
+}
+
 variable "root_block_device_encrypted" {
   type        = bool
   default     = true
@@ -190,6 +181,5 @@ variable "host_name" {
   type        = string
   default     = "bastion"
   description = "The Bastion hostname created in Route53"
->>>>>>> cc4ebf97d3c2d2b30900466c84e15781fcec6233
 }
 
